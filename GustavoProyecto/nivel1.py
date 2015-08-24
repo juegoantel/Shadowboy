@@ -16,9 +16,9 @@ class Level_01(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        self.fondo = pygame.image.load("imagenes/background_01.png").convert()
+        self.fondo = pygame.image.load("imagenes/mapainicialprtt.png").convert()
         self.fondo.set_colorkey(constantes.BLANCO)
-        self.limite_nivel = -2500
+        self.limite_nivel = -12000
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ [platforma.GRASS_LEFT, 500, 500],
