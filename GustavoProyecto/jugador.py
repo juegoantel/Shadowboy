@@ -21,6 +21,8 @@ class Player(pygame.sprite.Sprite):
 
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
+    
+    puntos=0
 
     # -- Metodos
     def __init__(self,ruta):
@@ -134,7 +136,10 @@ class Player(pygame.sprite.Sprite):
 
             if isinstance(block, PlataformaConMovimiento):
                 self.rect.x += block.mover_x
-
+        listadepuntaje=  pygame.sprite.spritecollide(self, self.nivel.lista_puntaje, False)     
+        for objeto in listadepuntaje:
+            objeto.kill()
+            self.puntos +=1
     def calc_grav(self):
         """ Calcula el efecto de la gravedad. """
         

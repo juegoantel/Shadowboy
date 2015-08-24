@@ -43,6 +43,17 @@ class Level_01(Level):
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
 
+        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos.rect.x = 350
+        puntos.rect.y = 280
+        puntos.limite_izquierdo = 350
+        puntos.limite_derecho = 1000
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
         # Se agrega una plataforma en movimiento.
         bloque = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
         bloque.rect.x = 1350

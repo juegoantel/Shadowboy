@@ -45,6 +45,7 @@ class PlataformaConMovimiento(Plataforma):
 
     nivel = None
     jugador = None
+    #puntos=10
 
     def update(self):
         """ Metodo que actualiza la posicion de la plataforma
