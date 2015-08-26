@@ -149,9 +149,9 @@ class Player(pygame.sprite.Sprite):
             self.mover_y += .35
 
         # Verificamos si estamos en el suelo.
-        if self.rect.y >= constantes.LARGO_PANTALLA - self.rect.height and self.mover_y >= 0:
+        if self.rect.y >= self.nivel.limitesuelo - self.rect.height and self.mover_y >= 0:
             self.mover_y = 0
-            self.rect.y = constantes.LARGO_PANTALLA - self.rect.height
+            self.rect.y = self.nivel.limitesuelo - self.rect.height
 
     def saltar(self):
         """ Metodo que se llamam si saltamos. """
@@ -160,7 +160,7 @@ class Player(pygame.sprite.Sprite):
         platform_hit_list = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
         self.rect.y -= 2
 
-        if len(platform_hit_list) > 0 or self.rect.bottom >= constantes.LARGO_PANTALLA:
+        if len(platform_hit_list) > 0 or self.rect.bottom >= self.nivel.limitesuelo:
             self.mover_y = -10
 
     def retroceder(self):

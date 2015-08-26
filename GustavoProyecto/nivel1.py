@@ -16,23 +16,23 @@ class Level_01(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        self.fondo = pygame.image.load("imagenes/mapainicialprtt.png").convert()
+        self.fondo = pygame.image.load("imagenes/mapainicialbeta.png").convert()
         self.fondo.set_colorkey(constantes.BLANCO)
         self.limite_nivel = -12000
-
+        self.limitesuelo= 535
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [ [platforma.GRASS_LEFT, 500, 500],
-                  [platforma.GRASS_MIDDLE, 570, 500],
-                  [platforma.GRASS_RIGHT, 640, 500],
-                  [platforma.GRASS_LEFT, 800, 400],
-                  [platforma.GRASS_MIDDLE, 870, 400],
-                  [platforma.GRASS_RIGHT, 940, 400],
-                  [platforma.GRASS_LEFT, 1000, 500],
-                  [platforma.GRASS_MIDDLE, 1070, 500],
-                  [platforma.GRASS_RIGHT, 1140, 500],
-                  [platforma.STONE_PLATFORM_LEFT, 1120, 280],
-                  [platforma.STONE_PLATFORM_MIDDLE, 1190, 280],
-                  [platforma.STONE_PLATFORM_RIGHT, 1260, 280],
+        nivel = [ #[platforma.GRASS_LEFT, 500, 500],
+                  #[platforma.GRASS_MIDDLE, 570, 500],
+                  #[platforma.GRASS_RIGHT, 640, 500],
+                  #[platforma.GRASS_LEFT, 800, 400],
+                  #[platforma.GRASS_MIDDLE, 870, 400],
+                  #[platforma.GRASS_RIGHT, 940, 400],
+                  #[platforma.GRASS_LEFT, 1000, 500],
+                  #[platforma.GRASS_MIDDLE, 1070, 500],
+                  #[platforma.GRASS_RIGHT, 1140, 500],
+                  #[platforma.STONE_PLATFORM_LEFT, 1120, 280],
+                  #[platforma.STONE_PLATFORM_MIDDLE, 1190, 280],
+                  #[platforma.STONE_PLATFORM_RIGHT, 1260, 280],
                   ]
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -42,12 +42,23 @@ class Level_01(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
-
+ 
         puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
         puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
         puntos.rect.x = 350
         puntos.rect.y = 280
         puntos.limite_izquierdo = 350
+        puntos.limite_derecho = 1000
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos.rect.x = 950
+        puntos.rect.y = 280
+        puntos.limite_izquierdo = 950
         puntos.limite_derecho = 1000
         puntos.mover_x = 1
         puntos.jugador = self.jugador
