@@ -2,7 +2,7 @@ import pygame
 
 import constantes
 from nivel1 import Level_01
-from nivel2 import Level_02 
+#from nivel2 import Level_02 
 
 from jugador import Player
 
@@ -24,7 +24,7 @@ def main():
     # Creamos todos los niveles del juego
     lista_niveles = []
     lista_niveles.append(Level_01(jugador_principal))
-    lista_niveles.append(Level_02(jugador_principal))
+    #lista_niveles.append(Level_02(jugador_principal))
 
     # Seteamos cual es el primer nivel.
     numero_del_nivel_actual = 0
@@ -95,11 +95,12 @@ def main():
                 jugador_principal.nivel = nivel_actual
 
 
+        #print "posicion del personaje: ", current_position
         # TODO EL CODIGO PARA DIBUJAR DEBE IR DEBAJO DE ESTE COMENTARIO.
         nivel_actual.draw(pantalla)
         lista_sprites_activos.draw(pantalla)
 
-        textopuntos=letraparapuntos.render("puntos: "+str(jugador_principal.puntos),1,constantes.AZUL)
+        textopuntos=letraparapuntos.render("Score: "+str(jugador_principal.puntos),1,constantes.BLANCO)
         pantalla.blit(textopuntos,(10,10))
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
 

@@ -42,20 +42,20 @@ class Player(pygame.sprite.Sprite):
         self.jugador_frame_der.append(imagen)
         imagen = sprite_sheet.obtener_imagen(174, 87, 41, 76)
         self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(115, 82, 40, 80)
+        imagen = sprite_sheet.obtener_imagen(110, 81, 50, 80)
         self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(55, 84, 49, 76)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(4, 88, 43, 74)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(132, 93, 41, 73)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(227, 4, 38, 75)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(170, 4, 38, 75)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(120, 3, 41, 77)
-        self.jugador_frame_der.append(imagen)
+        #imagen = sprite_sheet.obtener_imagen(55, 84, 49, 76)
+        #self.jugador_frame_der.append(imagen)
+        #imagen = sprite_sheet.obtener_imagen(4, 88, 43, 74)
+        #self.jugador_frame_der.append(imagen)
+        #imagen = sprite_sheet.obtener_imagen(132, 93, 41, 73)
+        #self.jugador_frame_der.append(imagen)
+        #imagen = sprite_sheet.obtener_imagen(227, 4, 38, 75)
+        #self.jugador_frame_der.append(imagen)
+        #imagen = sprite_sheet.obtener_imagen(170, 4, 38, 75)
+        #self.jugador_frame_der.append(imagen)
+        #imagen = sprite_sheet.obtener_imagen(120, 3, 41, 77)
+        #self.jugador_frame_der.append(imagen)
         imagen = sprite_sheet.obtener_imagen(63, 3, 46, 75)
         self.jugador_frame_der.append(imagen)
         imagen = sprite_sheet.obtener_imagen(4, 4, 48, 75)
@@ -140,13 +140,14 @@ class Player(pygame.sprite.Sprite):
         for objeto in listadepuntaje:
             objeto.kill()
             self.puntos +=1
+    
     def calc_grav(self):
         """ Calcula el efecto de la gravedad. """
         
         if self.mover_y == 0:
             self.mover_y = 1
         else:
-            self.mover_y += .35
+            self.mover_y += .30
 
         # Verificamos si estamos en el suelo.
         if self.rect.y >= self.nivel.limitesuelo - self.rect.height and self.mover_y >= 0:

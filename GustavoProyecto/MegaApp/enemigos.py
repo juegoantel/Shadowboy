@@ -20,7 +20,7 @@ class Enemigo(pygame.sprite.Sprite):
 
         pygame.sprite.Sprite.__init__(self)
 
-        sprite_sheet = SpriteSheetNotas("imagenes/enemigo.png")
+        sprite_sheet = SpriteSheet("imagenes/enemigo.png")
             
         #Recorte
         image = sprite_sheet.get_image(0, 0, 49, 81)
