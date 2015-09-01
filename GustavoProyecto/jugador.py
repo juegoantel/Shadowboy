@@ -155,6 +155,7 @@ class Player(pygame.sprite.Sprite):
 
         if len(platform_hit_list) > 0 or self.rect.bottom >= self.nivel.limitesuelo:
             self.mover_y = -10
+            #gravedad
 
     def retroceder(self):
         """ Se llama cuando movemos hacia la izq. """
