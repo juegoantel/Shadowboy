@@ -35,8 +35,9 @@ class Level_01(Level):
                   #[platforma.STONE_PLATFORM_RIGHT, 1260, 280],
                   ]
         
-        nivel_enemigos = [ [artefacto.pinchos, 6000, 450] ] 
-        nivel_enemigos = [ [artefacto.pinchos, 3000, 450] ] 
+        nivel_enemigos = [ [artefacto.pinchos, 4000, 450],  
+                           [artefacto.pinchos, 6000, 450] 
+                         ] 
                   
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.

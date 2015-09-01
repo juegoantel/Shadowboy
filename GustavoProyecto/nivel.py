@@ -36,7 +36,7 @@ class Level():
         """ Dibujamos todo sobre el nivel. """
 
         # Se debe dibujar el fondo.
-        pantalla.fill(constantes.AZUL)
+        pantalla.fill(constantes.BLANCO)
         pantalla.blit(self.fondo,(self.posicion_jugador_nivel // 3,0))
 
         # Se dibujan todos los sprite que se cargaron.

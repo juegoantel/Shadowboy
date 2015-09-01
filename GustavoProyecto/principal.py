@@ -19,7 +19,7 @@ def main():
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Player("imagenes/movimientostam.png")
 
-    letraparapuntos=pygame.font.Font(None,24)
+    letraparapuntos=pygame.font.Font(None,30)
 
     # Creamos todos los niveles del juego
     lista_niveles = []
@@ -104,7 +104,7 @@ def main():
         pantalla.blit(textopuntos,(10,10))
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
 
-        clock.tick(60)
+        clock.tick(70)
 
         pygame.display.flip()
 

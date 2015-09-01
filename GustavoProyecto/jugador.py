@@ -160,13 +160,13 @@ class Player(pygame.sprite.Sprite):
     def retroceder(self):
         """ Se llama cuando movemos hacia la izq. """
         
-        self.mover_x = -6
+        self.mover_x = -8
         self.direccion = "L"
 
     def avanzar(self):
         """ Se llama cuando movemos hacia la der. """
         
-        self.mover_x = 6
+        self.mover_x = 8
         self.direccion = "R"
 
     def parar(self):
