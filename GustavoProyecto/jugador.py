@@ -21,7 +21,7 @@ class Player(pygame.sprite.Sprite):
 
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
-    
+    #constante
     puntos=0
 
     # -- Metodos
