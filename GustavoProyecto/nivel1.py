@@ -35,7 +35,8 @@ class Level_01(Level):
                   #[platforma.STONE_PLATFORM_RIGHT, 1260, 280],
                   ]
         
-        nivel_enemigos = [ [artefacto.pinchos, 300, 500] ] 
+        nivel_enemigos = [ [artefacto.pinchos, 6000, 450] ] 
+        nivel_enemigos = [ [artefacto.pinchos, 3000, 450] ] 
                   
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -81,6 +82,18 @@ class Level_01(Level):
         puntos.jugador = self.jugador
         puntos.nivel = self
         self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos.rect.x = 5400
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 5300
+        puntos.limite_derecho = 5500
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+
 
         
         # Se agrega una plataforma en movimiento.
