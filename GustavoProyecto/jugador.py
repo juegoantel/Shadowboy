@@ -121,7 +121,7 @@ class Player(pygame.sprite.Sprite):
             print "CHOQUE : ",self.mover_x
             
             if  self.mover_x == 8:
-                self.rect.x = -2300
+                self.rect.x += pos
                 
             
 

@@ -19,7 +19,7 @@ class Level_01(Level):
         #Cargamos la imagen de fondo.
         self.fondo = pygame.image.load("imagenes/mapainicialbeta.png").convert()
         self.fondo.set_colorkey(constantes.BLANCO)
-        self.limite_nivel = -12000
+        self.limite_nivel = -33848
         self.limitesuelo= 535
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ #[platforma.GRASS_MIDDLE, 570, 500],
@@ -36,7 +36,8 @@ class Level_01(Level):
                   ]
         
         nivel_enemigos = [ [artefacto.pinchos, 4000, 500],  
-                           [artefacto.pinchos, 6000, 500] 
+                           [artefacto.pinchos, 6000, 500], 
+                           [artefacto.pinchos, 8000, 500]
                          ] 
                   
 
@@ -90,6 +91,17 @@ class Level_01(Level):
         puntos.rect.y = 300
         puntos.limite_izquierdo = 5300
         puntos.limite_derecho = 5500
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos.rect.x = 7400
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 7300
+        puntos.limite_derecho = 7500
         puntos.mover_x = 1
         puntos.jugador = self.jugador
         puntos.nivel = self
