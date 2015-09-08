@@ -116,22 +116,37 @@ class Player(pygame.sprite.Sprite):
         self.rect.y += self.mover_y
 
         # Verficiamos si colisionamos con algo si saltamos
-        lista_de_bloques_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
-        for block in lista_de_bloques_colisionados:
+        lista_de_enemigos_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_enemigos, False)
+        for enemigo in lista_de_enemigos_colisionados:
+            print "CHOQUE : ",self.mover_x
+            
+            if  self.mover_x == 8:
+                self.rect.x = -2300
+                
+            
 
-            if self.mover_y > 0:
-                self.rect.bottom = block.rect.top
-            elif self.mover_y < 0:
-                self.rect.top = block.rect.bottom
+            
 
-            self.mover_y = 0
-
-            if isinstance(block, PlataformaConMovimiento):
-                self.rect.x += block.mover_x
+        
         listadepuntaje=  pygame.sprite.spritecollide(self, self.nivel.lista_puntaje, False)     
         for objeto in listadepuntaje:
             objeto.kill()
             self.puntos +=1
+            
+#         lista_de_bloques_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
+#         for block in lista_de_bloques_colisionados:
+# 
+#             if self.mover_y > 0:
+#                 self.rect.bottom = block.rect.top
+#             elif self.mover_y < 0:
+#                 self.rect.top = block.rect.bottom
+# 
+#             self.mover_y = 0
+# 
+#             if isinstance(block, PlataformaConMovimiento):
+#                 self.rect.x += block.mover_x
+            
+            
     
     def calc_grav(self):
         """ Calcula el efecto de la gravedad. """

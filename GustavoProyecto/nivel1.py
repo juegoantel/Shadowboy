@@ -35,8 +35,8 @@ class Level_01(Level):
                   #[platforma.STONE_PLATFORM_RIGHT, 1260, 280],
                   ]
         
-        nivel_enemigos = [ [artefacto.pinchos, 4000, 450],  
-                           [artefacto.pinchos, 6000, 450] 
+        nivel_enemigos = [ [artefacto.pinchos, 4000, 500],  
+                           [artefacto.pinchos, 6000, 500] 
                          ] 
                   
 
@@ -56,9 +56,9 @@ class Level_01(Level):
             bloque_enemigo.rect.y = enemigo[2]
             
             bloque_enemigo.jugador = self.jugador
-            self.lista_plataformas.add(bloque_enemigo)
+            self.lista_enemigos.add(bloque_enemigo)
 
-            
+        
             
  
 

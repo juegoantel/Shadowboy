@@ -17,7 +17,7 @@ def main():
     pygame.display.set_caption("Proyecto Video-Juegos")
 
     # Creamos al jugador con la imagen p1_walk.png
-    jugador_principal = Player("imagenes/movimientostam.png")
+    jugador_principal = Player("imagenes/movimientostam2.png")
 
     letraparapuntos=pygame.font.Font(None,30)
 
@@ -94,7 +94,8 @@ def main():
                 nivel_actual = lista_niveles[numero_del_nivel_actual]
                 jugador_principal.nivel = nivel_actual
 
-
+        print "current_position: ", current_position
+        
         #print "posicion del personaje: ", current_position
         # TODO EL CODIGO PARA DIBUJAR DEBE IR DEBAJO DE ESTE COMENTARIO.
         nivel_actual.draw(pantalla)
