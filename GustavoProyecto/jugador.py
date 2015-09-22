@@ -46,7 +46,7 @@ class Player(pygame.sprite.Sprite):
         imagen = sprite_sheet.obtener_imagen(110, 80, 55, 80)
         self.jugador_frame_der.append(imagen)
         imagen = sprite_sheet.obtener_imagen(55, 80, 55, 80)
-#       self.jugador_frame_der.append(imagen)
+        self.jugador_frame_der.append(imagen)
 #       imagen = sprite_sheet.obtener_imagen(0, 80, 55, 80)
 #       self.jugador_frame_der.append(imagen)
 #       imagen = sprite_sheet.obtener_imagen(175, 0, 55, 80)

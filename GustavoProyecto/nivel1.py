@@ -3,6 +3,7 @@ import constantes
 import platforma
 from nivel import Level
 import  artefacto
+import enemigo1
 
 class Level_01(Level):
     ''' Clase que define el primer nivel.
@@ -38,8 +39,11 @@ class Level_01(Level):
         nivel_enemigos = [ [artefacto.pinchos, 4000, 500],  
                            [artefacto.pinchos, 6000, 500], 
                            [artefacto.pinchos, 8000, 500]
-                         ] 
-                  
+                           ] 
+        
+        nivel_enemigos1 = [ [enemigo1.sombra1, 1000,300],
+                            [enemigo1.sombra1, 13000,300]
+                            ]
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
         for plataforma in nivel:
@@ -59,10 +63,17 @@ class Level_01(Level):
             bloque_enemigo.jugador = self.jugador
             self.lista_enemigos.add(bloque_enemigo)
 
-        
+        # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
+        for sombra in nivel_enemigos1:
+            bloque_enemigo1 = enemigo1.Enemigo1(sombra[0])
+            bloque_enemigo1.rect.x = sombra[1]
+            bloque_enemigo1.rect.y = sombra[2]
             
+            bloque_enemigo1.jugador = self.jugador
+            self.lista_enemigos.add(bloque_enemigo1)
+            
+            "PUNTOS DIAMANTES (4)"
  
-
         puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
         puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
         puntos.rect.x = 3000
