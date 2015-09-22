@@ -17,9 +17,10 @@ def main():
     pygame.display.set_caption("Proyecto Video-Juegos")
 
     # Creamos al jugador con la imagen p1_walk.png
-    jugador_principal = Player("imagenes/movimientostam2.png")
+    jugador_principal = Player("imagenes/MOVIMIENTOSAJUSTADOS.png")
 
     letraparapuntos=pygame.font.Font(None,30)
+    letragameover=pygame.font.Font(None,60)
 
     # Creamos todos los niveles del juego
     lista_niveles = []
@@ -103,12 +104,24 @@ def main():
 
         textopuntos=letraparapuntos.render("Score: "+str(jugador_principal.puntos),1,constantes.BLANCO)
         pantalla.blit(textopuntos,(10,10))
+        
+        textovidas=letraparapuntos.render("Shadows: "+str(jugador_principal.vidas),1,constantes.BLANCO)
+        pantalla.blit(textovidas,(10,35))
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
 
         clock.tick(70)
 
         pygame.display.flip()
-
+        
+        if jugador_principal.vidas<=0:
+            pantalla.fill(constantes.NEGRO)
+            texto_gameover= letragameover.render("GAME OVER, go to sleep...",1, constantes.AZUL)
+            pantalla.blit(texto_gameover, [100, 250])
+            pygame.display.flip()
+            pygame.event.wait()
+            salir= True
+            
+    
     pygame.quit()
 
 if __name__ == "__main__":

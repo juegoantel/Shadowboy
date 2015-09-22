@@ -13,7 +13,8 @@ pinchos            = (0, 0, 264, 89)
 
 class Enemigo(pygame.sprite.Sprite):
     
-    avance_jugador = 132
+    avance_jugador = 200
+    
 
     def __init__(self, sprite_sheet_data):
 
