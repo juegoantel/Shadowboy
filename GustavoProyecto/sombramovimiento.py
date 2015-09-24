@@ -5,7 +5,8 @@ Created on 22/09/2015
 '''
 import pygame
 from enemigo1 import Enemigo1
-class SpmbraConMovimiento(Enemigo1):
+
+class SombraConMovimiento(Enemigo1):
     """ Clase que define las caracteristicas de una plataforma con movimiento """
     mover_x = 0
     mover_y = 0
@@ -22,7 +23,6 @@ class SpmbraConMovimiento(Enemigo1):
         """ Metodo que actualiza la posicion de la plataforma
             Si el jugador esta en el camino, mueve al jugador con la plataforma."""
            
-
         # Movimiento izquierda/derecha
         self.rect.x += self.mover_x
 

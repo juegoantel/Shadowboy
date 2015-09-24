@@ -95,7 +95,7 @@ def main():
                 nivel_actual = lista_niveles[numero_del_nivel_actual]
                 jugador_principal.nivel = nivel_actual
 
-        print "current_position: ", current_position
+        #print "current_position: ", current_position
         
         #print "posicion del personaje: ", current_position
         # TODO EL CODIGO PARA DIBUJAR DEBE IR DEBAJO DE ESTE COMENTARIO.
@@ -119,7 +119,7 @@ def main():
             pantalla.blit(texto_gameover, [100, 250])
             pygame.display.flip()
             pygame.event.wait()
-            salir= True
+            main()
             
     
     pygame.quit()

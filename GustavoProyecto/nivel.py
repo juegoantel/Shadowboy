@@ -32,6 +32,7 @@ class Level():
         self.lista_plataformas.update()
         self.lista_enemigos.update()
         self.lista_puntaje.update()
+        
     def draw(self, pantalla):
         """ Dibujamos todo sobre el nivel. """
 

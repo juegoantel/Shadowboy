@@ -1,9 +1,13 @@
 import pygame
 import constantes
 import platforma
-from nivel import Level
-import  artefacto
 import enemigo1
+import  artefacto
+
+from nivel import Level
+from sombramovimiento import SombraConMovimiento 
+
+    
 
 class Level_01(Level):
     ''' Clase que define el primer nivel.
@@ -41,9 +45,8 @@ class Level_01(Level):
                            [artefacto.pinchos, 8000, 500]
                            ] 
         
-        nivel_enemigos1 = [ [enemigo1.sombra1, 1000,300],
-                            [enemigo1.sombra1, 13000,300]
-                            ]
+#         nivel_enemigos1 =   []
+                             
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
         for plataforma in nivel:
@@ -64,18 +67,31 @@ class Level_01(Level):
             self.lista_enemigos.add(bloque_enemigo)
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
-        for sombra in nivel_enemigos1:
-            bloque_enemigo1 = enemigo1.Enemigo1(sombra[0])
-            bloque_enemigo1.rect.x = sombra[1]
-            bloque_enemigo1.rect.y = sombra[2]
+#         for sombra in nivel_enemigos1:
+#             bloque_enemigo1 = enemigo1.Enemigo1(sombra[0])
+#             bloque_enemigo1.rect.x = sombra[1]
+#             bloque_enemigo1.rect.y = sombra[2]
+#             
+#             bloque_enemigo1.jugador = self.jugador
+#             self.lista_enemigos.add(bloque_enemigo1)
             
-            bloque_enemigo1.jugador = self.jugador
-            self.lista_enemigos.add(bloque_enemigo1)
+            "sombras"
             
-            "PUNTOS DIAMANTES (4)"
- 
-        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
-        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1.rect.x = 1000
+        nivel_enemigos1.rect.y = 300
+        nivel_enemigos1.limite_izquierdo = 800
+        nivel_enemigos1.limite_derecho = 1200
+        nivel_enemigos1.mover_x = 2
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)  
+            
+        "diamantes"
+
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
         puntos.rect.x = 3000
         puntos.rect.y = 280
         puntos.limite_izquierdo = 2900
@@ -85,8 +101,8 @@ class Level_01(Level):
         puntos.nivel = self
         self.lista_puntaje.add(puntos)
         
-        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
-        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
         puntos.rect.x = 3400
         puntos.rect.y = 280
         puntos.limite_izquierdo = 3300
@@ -96,8 +112,8 @@ class Level_01(Level):
         puntos.nivel = self
         self.lista_puntaje.add(puntos)
         
-        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
-        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
         puntos.rect.x = 5400
         puntos.rect.y = 300
         puntos.limite_izquierdo = 5300
@@ -107,8 +123,8 @@ class Level_01(Level):
         puntos.nivel = self
         self.lista_puntaje.add(puntos)
         
-        puntos=platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
-        puntos = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
         puntos.rect.x = 7400
         puntos.rect.y = 300
         puntos.limite_izquierdo = 7300

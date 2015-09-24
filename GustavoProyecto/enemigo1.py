@@ -13,7 +13,7 @@ sombra1            = (10, 10, 600, 750)
 
 class Enemigo1(pygame.sprite.Sprite):
     
-    avance_jugador = 200
+    avance_jugador = 1
     
 
     def __init__(self, sprite_sheet_data):
@@ -24,5 +24,5 @@ class Enemigo1(pygame.sprite.Sprite):
         self.image = pygame.image.load("imagenes/sombraenemigo.png").convert()
         self.rect = self.image.get_rect()    
 
-
         self.image.set_colorkey(constantes.BLANCO)
+        

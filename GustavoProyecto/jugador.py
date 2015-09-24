@@ -129,17 +129,17 @@ class Player(pygame.sprite.Sprite):
 
         # Verficiamos si colisionamos con algo si saltamos
         lista_de_enemigos_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_enemigos, False)
+        
         for enemigo in lista_de_enemigos_colisionados:
-            print "CHOQUE : ",self.mover_x
+            print "CHOQUE : ", self.mover_x
+            print "pos: ", pos
+            print "self.rect.x: ", self.rect.x
             
-            if  self.mover_x == 8:
-                self.rect.x += pos
-                self.vidas -= 1 
-                
             
-
-            
-
+            if  (self.mover_x == 6 or self.mover_x == -6):                 
+                self.rect.x = pos
+                self.vidas -= 1                                 
+                        
         
         listadepuntaje=  pygame.sprite.spritecollide(self, self.nivel.lista_puntaje, False)     
         for objeto in listadepuntaje:
@@ -188,13 +188,13 @@ class Player(pygame.sprite.Sprite):
     def retroceder(self):
         """ Se llama cuando movemos hacia la izq. """
         
-        self.mover_x = -8
+        self.mover_x = -6
         self.direccion = "L"
 
     def avanzar(self):
         """ Se llama cuando movemos hacia la der. """
         
-        self.mover_x = 8
+        self.mover_x = 6
         self.direccion = "R"
 
     def parar(self):
