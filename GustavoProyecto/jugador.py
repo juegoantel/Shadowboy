@@ -144,7 +144,7 @@ class Player(pygame.sprite.Sprite):
         listadepuntaje=  pygame.sprite.spritecollide(self, self.nivel.lista_puntaje, False)     
         for objeto in listadepuntaje:
             objeto.kill()
-            self.puntos +=1
+            self.puntos +=10
             
 #         lista_de_bloques_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
 #         for block in lista_de_bloques_colisionados:
