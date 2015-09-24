@@ -115,7 +115,7 @@ def main():
         
         if jugador_principal.vidas<=0:
             pantalla.fill(constantes.NEGRO)
-            texto_gameover= letragameover.render("GAME OVER, go to sleep...",1, constantes.AZUL)
+            texto_gameover= letragameover.render("GAME OVER, good night...",1, constantes.ROJO)
             pantalla.blit(texto_gameover, [100, 250])
             pygame.display.flip()
             pygame.event.wait()

@@ -22,12 +22,14 @@ class Level_01(Level):
 
         # Se llama al metodo del padre constructor.
         Level.__init__(self, jugador)
-
+        self.sonido=pygame.mixer.Sound("sonido/musciadeljuego.wav")
+        self.sonido.play()
         #Cargamos la imagen de fondo.
         self.fondo = pygame.image.load("imagenes/reworknivel1.png").convert()
         self.fondo.set_colorkey(constantes.BLANCO)
         self.limite_nivel = -33848
         self.limitesuelo= 535
+        
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ #[platforma.GRASS_MIDDLE, 570, 500],
                   #[platforma.GRASS_RIGHT, 640, 500],
