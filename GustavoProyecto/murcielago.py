@@ -13,7 +13,7 @@ bat            = (0, 0, 145, 43)
 
 class Murcielago(pygame.sprite.Sprite):
     
-    avance_jugador = 200
+    avance_jugador = 100
     
 
     def __init__(self, sprite_sheet_data):

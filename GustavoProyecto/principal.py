@@ -2,7 +2,7 @@ import pygame
 
 import constantes
 from nivel1 import Level_01
-#from nivel2 import Level_02 
+from nivel2 import Level_02 
 
 from jugador import Player
 
@@ -25,10 +25,10 @@ def main():
     # Creamos todos los niveles del juego
     lista_niveles = []
     lista_niveles.append(Level_01(jugador_principal))
-    #lista_niveles.append(Level_02(jugador_principal))
+    lista_niveles.append(Level_02(jugador_principal))
 
     # Seteamos cual es el primer nivel.
-    numero_del_nivel_actual = 0
+    numero_del_nivel_actual = 1
     nivel_actual = lista_niveles[numero_del_nivel_actual]
 
     lista_sprites_activos = pygame.sprite.Group()

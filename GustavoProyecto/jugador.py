@@ -136,7 +136,7 @@ class Player(pygame.sprite.Sprite):
             print "self.rect.x: ", self.rect.x
             
             
-            if  (self.mover_x == 6 or self.mover_x == -6):                 
+            if  (self.mover_x == 8 or self.mover_x == -8):                 
                 self.rect.x = pos
                 self.vidas -= 1                                 
                         
@@ -182,19 +182,19 @@ class Player(pygame.sprite.Sprite):
         self.rect.y -= 2
 
         if len(platform_hit_list) > 0 or self.rect.bottom >= self.nivel.limitesuelo:
-            self.mover_y = -10
+            self.mover_y = -20
             #gravedad
 
     def retroceder(self):
         """ Se llama cuando movemos hacia la izq. """
         
-        self.mover_x = -6
+        self.mover_x = -8
         self.direccion = "L"
 
     def avanzar(self):
         """ Se llama cuando movemos hacia la der. """
         
-        self.mover_x = 6
+        self.mover_x = 8
         self.direccion = "R"
 
     def parar(self):
