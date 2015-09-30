@@ -182,7 +182,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.y -= 2
 
         if len(platform_hit_list) > 0 or self.rect.bottom >= self.nivel.limitesuelo:
-            self.mover_y = -20
+            self.mover_y = -30
             #gravedad
 
     def retroceder(self):

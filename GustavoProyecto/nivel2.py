@@ -8,6 +8,7 @@ import platforma
 import enemigo1
 import artefacto
 import murcielago
+import manosz
 
 from nivel import Level
 from sombramovimiento import SombraConMovimiento 
@@ -26,26 +27,33 @@ class Level_02(Level):
         Level.__init__(self, jugador)
         
         #Cargamos la imagen de fondo.
-        self.fondo = pygame.image.load("imagenes/reworknivel1.png").convert()
+        self.fondo = pygame.image.load("imagenes/MAPA2HD.png").convert()
         self.fondo.set_colorkey(constantes.BLANCO)
-        self.limite_nivel = -33848
+        self.limite_nivel = -50848
         self.limitesuelo= 535
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [ 
-#                   [platforma.STONE_PLATFORM_LEFT, 500, 550],
-#                   [platforma.STONE_PLATFORM_MIDDLE, 570, 550],
-#                   [platforma.STONE_PLATFORM_RIGHT, 640, 550],
-#                   [platforma.GRASS_LEFT, 800, 400],
-#                   [platforma.GRASS_MIDDLE, 870, 400],
-#                   [platforma.GRASS_RIGHT, 940, 400],
-#                   [platforma.GRASS_LEFT, 1000, 500],
-#                   [platforma.GRASS_MIDDLE, 1070, 500],
-#                   [platforma.GRASS_RIGHT, 1140, 500],
-#                   [platforma.STONE_PLATFORM_LEFT, 1120, 280],
-#                   [platforma.STONE_PLATFORM_MIDDLE, 1190, 280],
-#                   [platforma.STONE_PLATFORM_RIGHT, 1260, 280],
+        
+        nivel = [ #[platforma.GRASS_MIDDLE, 570, 500],
+                  #[platforma.GRASS_RIGHT, 640, 500],
+                  #[platforma.GRASS_LEFT, 800, 400],
+                  #[platforma.GRASS_MIDDLE, 870, 400],
+                  #[platforma.GRASS_RIGHT, 940, 400],
+                  #[platforma.GRASS_LEFT, 1000, 500],
+                  #[platforma.GRASS_MIDDLE, 1070, 500],
+                  #[platforma.GRASS_RIGHT, 1140, 500],
+                  #[platforma.STONE_PLATFORM_LEFT, 1120, 280],
+                  #[platforma.STONE_PLATFORM_MIDDLE, 1190, 280],
+                  #[platforma.STONE_PLATFORM_RIGHT, 1260, 280],
                   ]
+        
+        nivel_enemigos = [ [artefacto.pinchos, 4000, 500],  
+                           [artefacto.pinchos, 6000, 500], 
+                           [artefacto.pinchos, 8000, 500],
+                           [manosz.manos, 3000,500]     
+                         ]
+        
+         
         # Se busca en la lista anterior creada y se le agregan las plataformas al jugador.
         for plataforma in nivel:
             bloque = platforma.Plataforma(plataforma[0])

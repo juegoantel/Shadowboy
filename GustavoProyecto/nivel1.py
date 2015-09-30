@@ -4,6 +4,8 @@ import platforma
 import enemigo1
 import artefacto
 import murcielago
+import manosz
+
 
 from nivel import Level
 from sombramovimiento import SombraConMovimiento 
@@ -46,9 +48,12 @@ class Level_01(Level):
         
         nivel_enemigos = [ [artefacto.pinchos, 4000, 500],  
                            [artefacto.pinchos, 6000, 500], 
-                           [artefacto.pinchos, 8000, 500]
+                           [artefacto.pinchos, 8000, 500],
+                            
                            ] 
         
+        nivel_enemigos2 =[ [manosz.manos, 3000,500] 
+                          ]
 #         nivel_enemigos1 =   []
                              
 

@@ -28,7 +28,7 @@ def main():
     lista_niveles.append(Level_02(jugador_principal))
 
     # Seteamos cual es el primer nivel.
-    numero_del_nivel_actual = 1
+    numero_del_nivel_actual = 0
     nivel_actual = lista_niveles[numero_del_nivel_actual]
 
     lista_sprites_activos = pygame.sprite.Group()
@@ -105,7 +105,7 @@ def main():
         textopuntos=letraparapuntos.render("Score: "+str(jugador_principal.puntos),1,constantes.BLANCO)
         pantalla.blit(textopuntos,(10,10))
         
-        textovidas=letraparapuntos.render("Shadows: "+str(jugador_principal.vidas),1,constantes.BLANCO)
+        textovidas=letraparapuntos.render("life: "+str(jugador_principal.vidas),1,constantes.BLANCO)
         pantalla.blit(textovidas,(10,35))
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
 
