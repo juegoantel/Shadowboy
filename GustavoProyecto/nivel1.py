@@ -5,6 +5,8 @@ import enemigo1
 import artefacto
 import murcielago
 import manosz
+import arbolmalo
+import espanta
 
 
 from nivel import Level
@@ -49,13 +51,18 @@ class Level_01(Level):
         nivel_enemigos = [ [artefacto.pinchos, 4000, 500],  
                            [artefacto.pinchos, 6000, 500], 
                            [artefacto.pinchos, 8000, 500],
-                            
-                           ] 
+                           [artefacto.pinchos, 10000, 500],
+                           
+                          ]   
+                           
         
-        nivel_enemigos2 =[ [manosz.manos, 3000,500] 
-                          ]
-#         nivel_enemigos1 =   []
-                             
+         
+                          
+        nivel_enemigos1 = [[arbolmalo.arbol, 11000,365]  
+                          ]  
+
+#         nivel_enemigos2 = [[espanta.espantapajaros, 1000,365]  
+#                           ]  
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
         for plataforma in nivel:
@@ -76,14 +83,23 @@ class Level_01(Level):
             self.lista_enemigos.add(bloque_enemigo)
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
-#         for sombra in nivel_enemigos1:
-#             bloque_enemigo1 = enemigo1.Enemigo1(sombra[0])
-#             bloque_enemigo1.rect.x = sombra[1]
-#             bloque_enemigo1.rect.y = sombra[2]
-#             
+        for enemigo in nivel_enemigos1:
+            bloque_enemigo1 = arbolmalo.Enemigo(enemigo[0])
+            bloque_enemigo1.rect.x = enemigo[1]
+            bloque_enemigo1.rect.y = enemigo[2]
+              
+            bloque_enemigo1.jugador = self.jugador
+            self.lista_enemigos.add(bloque_enemigo1)
+            
+        # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
+#         for enemigo in nivel_enemigos2:
+#             bloque_enemigo1 = espanta.Enemigo(enemigo[0])
+#             bloque_enemigo1.rect.x = enemigo[1]
+#             bloque_enemigo1.rect.y = enemigo[2]
+#               
 #             bloque_enemigo1.jugador = self.jugador
 #             self.lista_enemigos.add(bloque_enemigo1)
-            
+#             
             "sombras"
             
         nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
@@ -108,18 +124,85 @@ class Level_01(Level):
         nivel_enemigos1.nivel = self
         self.lista_enemigos.add(nivel_enemigos1)
         
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1.rect.x = 9000
+        nivel_enemigos1.rect.y = 250
+        nivel_enemigos1.limite_izquierdo = 8750
+        nivel_enemigos1.limite_derecho = 9250
+        nivel_enemigos1.mover_x = 3
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)
+        
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1.rect.x = 12000
+        nivel_enemigos1.rect.y = 250
+        nivel_enemigos1.limite_izquierdo = 11900
+        nivel_enemigos1.limite_derecho = 12100
+        nivel_enemigos1.mover_x = 3
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)
+        
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1 = SombraConMovimiento(enemigo1.sombra1)
+        nivel_enemigos1.rect.x = 15000
+        nivel_enemigos1.rect.y = 250
+        nivel_enemigos1.limite_izquierdo = 14900
+        nivel_enemigos1.limite_derecho = 15100
+        nivel_enemigos1.mover_x = 3
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)
+        
         "murcielagos" 
         
         nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
         nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
         nivel_enemigos1.rect.x = 1000
         nivel_enemigos1.rect.y = 300
-        nivel_enemigos1.limite_izquierdo = 900
-        nivel_enemigos1.limite_derecho = 1100
-        nivel_enemigos1.mover_x = 3
+        nivel_enemigos1.limite_izquierdo = 800
+        nivel_enemigos1.limite_derecho = 1200
+        nivel_enemigos1.mover_x = 4
         nivel_enemigos1.jugador = self.jugador
         nivel_enemigos1.nivel = self
         self.lista_enemigos.add(nivel_enemigos1)
+        
+        nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
+        nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
+        nivel_enemigos1.rect.x = 4500
+        nivel_enemigos1.rect.y = 300
+        nivel_enemigos1.limite_izquierdo = 4300
+        nivel_enemigos1.limite_derecho = 4700
+        nivel_enemigos1.mover_x = 4
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)
+        
+        nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
+        nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
+        nivel_enemigos1.rect.x = 5000
+        nivel_enemigos1.rect.y = 300
+        nivel_enemigos1.limite_izquierdo = 4900
+        nivel_enemigos1.limite_derecho = 5100
+        nivel_enemigos1.mover_x = 4
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)
+        
+        nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
+        nivel_enemigos1 = MurcielagoConMovimiento(murcielago.bat)
+        nivel_enemigos1.rect.x = 6000
+        nivel_enemigos1.rect.y = 300
+        nivel_enemigos1.limite_izquierdo = 5900
+        nivel_enemigos1.limite_derecho = 6100
+        nivel_enemigos1.mover_x = 4
+        nivel_enemigos1.jugador = self.jugador
+        nivel_enemigos1.nivel = self
+        self.lista_enemigos.add(nivel_enemigos1)
+         
          
             
         "diamantes"
@@ -163,6 +246,72 @@ class Level_01(Level):
         puntos.rect.y = 300
         puntos.limite_izquierdo = 7300
         puntos.limite_derecho = 7500
+        puntos.mover_x = 2
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos.rect.x = 8000
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 7900
+        puntos.limite_derecho = 8100
+        puntos.mover_x = 2
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos.rect.x = 8400
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 8300
+        puntos.limite_derecho = 8500
+        puntos.mover_x = 2
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos.rect.x = 9000
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 8900
+        puntos.limite_derecho = 9100
+        puntos.mover_x = 2
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos.rect.x = 9400
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 9300
+        puntos.limite_derecho = 9500
+        puntos.mover_x = 2
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos.rect.x = 10500
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 10400
+        puntos.limite_derecho = 10600
+        puntos.mover_x = 2
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntaje.add(puntos)
+        
+        puntos=platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos = platforma.PlataformaConMovimiento(platforma.Diamante)
+        puntos.rect.x = 15500
+        puntos.rect.y = 300
+        puntos.limite_izquierdo = 15400
+        puntos.limite_derecho = 15600
         puntos.mover_x = 2
         puntos.jugador = self.jugador
         puntos.nivel = self
