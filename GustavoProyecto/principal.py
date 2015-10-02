@@ -8,7 +8,6 @@ from nivel1 import Level_01
 from nivel2 import Level_02 
 
 from funciones_spritesheet import SpriteSheet
-from funciones_spritesheet import SpriteSheetNotas
 
 from string import center
 import jugador
