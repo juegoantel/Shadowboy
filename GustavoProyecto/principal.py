@@ -17,7 +17,7 @@ def jugar(pantalla, jugador):
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Player("imagenes/MOVIMIENTOSAJUSTADOS.png")
 
-    letraparapuntos=pygame.font.Font(None,30)
+    letraparapuntos=pygame.font.Font(None,40)
     letragameover=pygame.font.Font(None,60)
 
     # Creamos todos los niveles del juego
@@ -26,7 +26,7 @@ def jugar(pantalla, jugador):
     lista_niveles.append(Level_02(jugador_principal))
 
     # Seteamos cual es el primer nivel.
-    numero_del_nivel_actual = 1
+    numero_del_nivel_actual = 0
     nivel_actual = lista_niveles[numero_del_nivel_actual]
 
     lista_sprites_activos = pygame.sprite.Group()
@@ -130,17 +130,15 @@ def main():
     tamanio = [constantes.ANCHO_PANTALLA, constantes.LARGO_PANTALLA]
     pantalla = pygame.display.set_mode(tamanio)
 
-    pygame.display.set_caption("Proyecto Video-Juegos")
+    pygame.display.set_caption("Shadow's Boy")
     
-    sprite_sheetN = SpriteSheet("imagenes/seleccion2.png")
-    jugador = sprite_sheetN.obtener_imagen(0,0,50,50)
+    sprite_sheetN = SpriteSheet("imagenes/personajes2.png")
+    jugador = sprite_sheetN.obtener_imagen(0,0,170,350)
+    sprite_sheetN = SpriteSheet("imagenes/personajes2.png")
+    jugador2 = sprite_sheetN.obtener_imagen(170,0,170,350)
+    historia = pygame.image.load("imagenes/Historia.png").convert()
+    creditos = pygame.image.load("imagenes/Creditos.png").convert()
 
-    
-    # menu
-    menuJuego = cMenu(250,250,20,5,"vertical",100,pantalla,[("Play Panlo europeo",1,None),("Historia",2,None),("Creditos",3,None),("Salir",4,None)])
-    menuJugador = cMenu(0, 0, 20, 5, "horizontal", 4, pantalla, [("Metalero",5,jugador),("Volver",0,None)])
-    #historia = cMenu (220,150, 400, 400, 'vertical',5,pantalla,[("Historia",7,historia)])
-    #creditos = cMenu (100,125, 630, 348, 'vertical',6,pantalla,[("Creditos",8,creditos)])
     logo = pygame.image.load("imagenes/SBwallpaper.png").convert()
     logo.set_colorkey(constantes.BLANCO)
     alogo = True
@@ -148,6 +146,13 @@ def main():
         pantalla.blit(logo,(0,0))
         pygame.display.flip()
         alogo = False
+    
+    # menu
+    menuJuego = cMenu(350,350,20,5,"vertical",100,pantalla,[("Play",1,None),("Historia",2,None),("Credits",3,None),("Exit",4,None)])
+    menuJugador = cMenu(250, 200, 20, 5, "horizontal", 4, pantalla, [("sombra1",5,jugador),("sombra2",5,jugador2),("Volver",0,None)])
+    historia = cMenu (0,0, 400, 400, 'vertical',5,pantalla,[("Historia",7,historia)])
+    creditos = cMenu (0,0, 630, 348, 'vertical',6,pantalla,[("Creditos",8,creditos)])
+   
     
     
     estado = 0
@@ -173,19 +178,15 @@ def main():
                 pygame.display.flip()
 
             elif estado == 2:
-                pantalla.fill(constantes.NEGRO)
+                pantalla.fill(constantes.BLANCO)
                 opcion, estado = historia.update(e, estado)
                 pygame.display.flip()
-
+ 
             elif estado == 3:
-                pantalla.fill(constantes.NEGRO)
+                pantalla.fill(constantes.BLANCO)
                 opcion, estado = creditos.update(e, estado)
                 pygame.display.flip()
-            else:
-                salir = True
-                
-
-            """
+            
             elif estado == 5:
                 jugar(pantalla, 1)
                 
@@ -197,12 +198,14 @@ def main():
                 jugar(pantalla, jugador)
                 
             elif estado == 8:
-                pantalla.fill(constantes.NEGRO)
+                pantalla.fill(constantes.BLANCO)
                 estado = 0
                 pantalla.blit(logo,(0,0))
                 pygame.display.flip()
-            """
             
+            else:
+                salir = True
+        
         if e.type == pygame.QUIT:
             salir = True
             
