@@ -126,16 +126,15 @@ def jugar(pantalla, jugador):
 def main():
     """ Clase principal en el que se debe ejecutar el juego. """
     pygame.init()
-    
-    
-    sprite_sheetN = SpriteSheetNotas("imagenes/seleccion2.png")
-    jugador = sprite_sheetN.get_image(0,0,50,50)
 
     # Configuramos el alto y largo de la pantalla
     tamanio = [constantes.ANCHO_PANTALLA, constantes.LARGO_PANTALLA]
     pantalla = pygame.display.set_mode(tamanio)
 
     pygame.display.set_caption("Proyecto Video-Juegos")
+    
+    sprite_sheetN = SpriteSheet("imagenes/seleccion2.png")
+    jugador = sprite_sheetN.obtener_imagen(0,0,50,50)
 
     
     # menu
